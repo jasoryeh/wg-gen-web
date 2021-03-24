@@ -2,24 +2,25 @@ package main
 
 import (
 	"fmt"
-	"github.com/danielkov/gin-helmet"
-	"github.com/gin-contrib/cors"
-	"github.com/gin-contrib/static"
-	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
-	"github.com/patrickmn/go-cache"
-	log "github.com/sirupsen/logrus"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/api"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/auth"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/core"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/util"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/version"
-	"golang.org/x/oauth2"
 	"net/http"
 	"os"
 	"path/filepath"
 	"strings"
 	"time"
+
+	helmet "github.com/danielkov/gin-helmet"
+	"github.com/gin-contrib/cors"
+	"github.com/gin-contrib/static"
+	"github.com/gin-gonic/gin"
+	"github.com/jasoryeh/wg-gen-web/api"
+	"github.com/jasoryeh/wg-gen-web/auth"
+	"github.com/jasoryeh/wg-gen-web/core"
+	"github.com/jasoryeh/wg-gen-web/util"
+	"github.com/jasoryeh/wg-gen-web/version"
+	"github.com/joho/godotenv"
+	"github.com/patrickmn/go-cache"
+	log "github.com/sirupsen/logrus"
+	"golang.org/x/oauth2"
 )
 
 var (
@@ -137,7 +138,7 @@ func main() {
 
 		// avoid 401 page for refresh after logout
 		if !strings.Contains(c.Request.URL.Path, "/api/") {
-			c.Redirect(301, "/index.html")
+			c.Redirect(301, "/api/v1")
 			return
 		}
 

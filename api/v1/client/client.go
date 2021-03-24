@@ -1,14 +1,15 @@
 package client
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
+	"github.com/jasoryeh/wg-gen-web/auth"
+	"github.com/jasoryeh/wg-gen-web/core"
+	"github.com/jasoryeh/wg-gen-web/model"
 	log "github.com/sirupsen/logrus"
 	"github.com/skip2/go-qrcode"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/auth"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/core"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/model"
 	"golang.org/x/oauth2"
-	"net/http"
 )
 
 // ApplyRoutes applies router to gin Router

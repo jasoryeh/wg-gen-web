@@ -1,14 +1,15 @@
 package server
 
 import (
-	"github.com/gin-gonic/gin"
-	log "github.com/sirupsen/logrus"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/auth"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/core"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/model"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/version"
-	"golang.org/x/oauth2"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+	"github.com/jasoryeh/wg-gen-web/auth"
+	"github.com/jasoryeh/wg-gen-web/core"
+	"github.com/jasoryeh/wg-gen-web/model"
+	"github.com/jasoryeh/wg-gen-web/version"
+	log "github.com/sirupsen/logrus"
+	"golang.org/x/oauth2"
 )
 
 // ApplyRoutes applies router to gin Router

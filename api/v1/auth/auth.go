@@ -1,15 +1,16 @@
 package auth
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/patrickmn/go-cache"
-	log "github.com/sirupsen/logrus"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/auth"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/model"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/util"
-	"golang.org/x/oauth2"
 	"net/http"
 	"time"
+
+	"github.com/gin-gonic/gin"
+	"github.com/jasoryeh/wg-gen-web/auth"
+	"github.com/jasoryeh/wg-gen-web/model"
+	"github.com/jasoryeh/wg-gen-web/util"
+	"github.com/patrickmn/go-cache"
+	log "github.com/sirupsen/logrus"
+	"golang.org/x/oauth2"
 )
 
 // ApplyRoutes applies router to gin Router

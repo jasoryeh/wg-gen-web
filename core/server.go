@@ -2,15 +2,16 @@ package core
 
 import (
 	"errors"
-	log "github.com/sirupsen/logrus"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/model"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/storage"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/template"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/util"
-	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 	"os"
 	"path/filepath"
 	"time"
+
+	"github.com/jasoryeh/wg-gen-web/model"
+	"github.com/jasoryeh/wg-gen-web/storage"
+	"github.com/jasoryeh/wg-gen-web/template"
+	"github.com/jasoryeh/wg-gen-web/util"
+	log "github.com/sirupsen/logrus"
+	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 )
 
 // ReadServer object, create default one

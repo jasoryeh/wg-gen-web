@@ -1,11 +1,13 @@
 package apiv1
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/api/v1/auth"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/api/v1/client"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/api/v1/server"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/api/v1/status"
+	"github.com/jasoryeh/wg-gen-web/api/v1/auth"
+	"github.com/jasoryeh/wg-gen-web/api/v1/client"
+	"github.com/jasoryeh/wg-gen-web/api/v1/server"
+	"github.com/jasoryeh/wg-gen-web/api/v1/status"
 )
 
 // ApplyRoutes apply routes to gin router
@@ -20,4 +22,10 @@ func ApplyRoutes(r *gin.RouterGroup, private bool) {
 			auth.ApplyRoutes(v1)
 		}
 	}
+}
+
+func index(c *gin.Context) {
+	c.JSON(http.StatusOK, map[string]string{
+		"message": "Hello",
+	})
 }

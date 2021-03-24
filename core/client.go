@@ -2,21 +2,22 @@ package core
 
 import (
 	"errors"
-	uuid "github.com/satori/go.uuid"
-	log "github.com/sirupsen/logrus"
-	"github.com/skip2/go-qrcode"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/model"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/storage"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/template"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/util"
-	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
-	"gopkg.in/gomail.v2"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"sort"
 	"strconv"
 	"time"
+
+	"github.com/jasoryeh/wg-gen-web/model"
+	"github.com/jasoryeh/wg-gen-web/storage"
+	"github.com/jasoryeh/wg-gen-web/template"
+	"github.com/jasoryeh/wg-gen-web/util"
+	uuid "github.com/satori/go.uuid"
+	log "github.com/sirupsen/logrus"
+	"github.com/skip2/go-qrcode"
+	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
+	"gopkg.in/gomail.v2"
 )
 
 // CreateClient client with all necessary data

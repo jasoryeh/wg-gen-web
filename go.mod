@@ -1,4 +1,4 @@
-module gitlab.127-0-0-1.fr/vx3r/wg-gen-web
+module github.com/jasoryeh/wg-gen-web
 
 go 1.14
 

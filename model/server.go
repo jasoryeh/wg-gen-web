@@ -2,8 +2,9 @@ package model
 
 import (
 	"fmt"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/util"
 	"time"
+
+	"github.com/jasoryeh/wg-gen-web/util"
 )
 
 // Server structure

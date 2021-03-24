@@ -3,11 +3,12 @@ package oauth2oidc
 import (
 	"context"
 	"fmt"
-	"github.com/coreos/go-oidc"
-	log "github.com/sirupsen/logrus"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/model"
-	"golang.org/x/oauth2"
 	"os"
+
+	"github.com/coreos/go-oidc"
+	"github.com/jasoryeh/wg-gen-web/model"
+	log "github.com/sirupsen/logrus"
+	"golang.org/x/oauth2"
 )
 
 // Oauth2idc in order to implement interface, struct is required

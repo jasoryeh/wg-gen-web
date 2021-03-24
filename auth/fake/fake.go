@@ -1,10 +1,11 @@
 package fake
 
 import (
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/model"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/util"
-	"golang.org/x/oauth2"
 	"time"
+
+	"github.com/jasoryeh/wg-gen-web/model"
+	"github.com/jasoryeh/wg-gen-web/util"
+	"golang.org/x/oauth2"
 )
 
 // Fake in order to implement interface, struct is required

@@ -2,12 +2,13 @@ package template
 
 import (
 	"bytes"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/model"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/util"
 	"os"
 	"path/filepath"
 	"strings"
 	"text/template"
+
+	"github.com/jasoryeh/wg-gen-web/model"
+	"github.com/jasoryeh/wg-gen-web/util"
 )
 
 var (

@@ -2,13 +2,14 @@ package auth
 
 import (
 	"fmt"
-	log "github.com/sirupsen/logrus"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/auth/fake"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/auth/github"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/auth/oauth2oidc"
-	"gitlab.127-0-0-1.fr/vx3r/wg-gen-web/model"
-	"golang.org/x/oauth2"
 	"os"
+
+	"github.com/jasoryeh/wg-gen-web/auth/fake"
+	"github.com/jasoryeh/wg-gen-web/auth/github"
+	"github.com/jasoryeh/wg-gen-web/auth/oauth2oidc"
+	"github.com/jasoryeh/wg-gen-web/model"
+	log "github.com/sirupsen/logrus"
+	"golang.org/x/oauth2"
 )
 
 // Auth interface to implement as auth provider
