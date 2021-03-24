@@ -1,8 +1,6 @@
 package apiv1
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
 	"github.com/jasoryeh/wg-gen-web/api/v1/auth"
 	"github.com/jasoryeh/wg-gen-web/api/v1/client"
@@ -22,10 +20,4 @@ func ApplyRoutes(r *gin.RouterGroup, private bool) {
 			auth.ApplyRoutes(v1)
 		}
 	}
-}
-
-func index(c *gin.Context) {
-	c.JSON(http.StatusOK, map[string]string{
-		"message": "Hello",
-	})
 }
