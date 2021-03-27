@@ -9,6 +9,7 @@ require (
 	github.com/gin-contrib/static v0.0.0-20191128031702-f81c604d8ac2
 	github.com/gin-gonic/gin v1.6.2
 	github.com/joho/godotenv v1.3.0
+	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/pquerna/cachecontrol v0.0.0-20180517163645-1555304b9b35 // indirect
 	github.com/satori/go.uuid v1.2.0
