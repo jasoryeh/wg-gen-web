@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/jasoryeh/wg-gen-web/model"
-	"github.com/jasoryeh/wg-gen-web/storage"
-	"github.com/jasoryeh/wg-gen-web/template"
 	"github.com/jasoryeh/wg-gen-web/util"
+	"github.com/jasoryeh/wg-gen-web/util/file"
+	"github.com/jasoryeh/wg-gen-web/util/template"
 	log "github.com/sirupsen/logrus"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 )
@@ -50,7 +50,7 @@ func ReadServer() (*model.Server, error) {
 		server.Created = time.Now().UTC()
 		server.Updated = server.Created
 
-		err = storage.Serialize("server.json", server)
+		err = file.Serialize("server.json", server)
 		if err != nil {
 			return nil, err
 		}
@@ -62,7 +62,7 @@ func ReadServer() (*model.Server, error) {
 		}
 	}
 
-	c, err := storage.Deserialize("server.json")
+	c, err := file.Deserialize("server.json")
 	if err != nil {
 		return nil, err
 	}
@@ -72,7 +72,7 @@ func ReadServer() (*model.Server, error) {
 
 // UpdateServer keep private values from existing one
 func UpdateServer(server *model.Server) (*model.Server, error) {
-	current, err := storage.Deserialize("server.json")
+	current, err := file.Deserialize("server.json")
 	if err != nil {
 		return nil, err
 	}
@@ -93,12 +93,12 @@ func UpdateServer(server *model.Server) (*model.Server, error) {
 	//server.PresharedKey = current.(*model.Server).PresharedKey
 	server.Updated = time.Now().UTC()
 
-	err = storage.Serialize("server.json", server)
+	err = file.Serialize("server.json", server)
 	if err != nil {
 		return nil, err
 	}
 
-	v, err := storage.Deserialize("server.json")
+	v, err := file.Deserialize("server.json")
 	if err != nil {
 		return nil, err
 	}

@@ -4,7 +4,7 @@ FROM golang:alpine AS build-back
 WORKDIR /app
 ARG COMMIT
 COPY . .
-RUN go build -o wg-gen-web-linux -ldflags="-X 'github.com/jasoryeh/wg-gen-web/version.Version=${COMMIT}'" github.com/jasoryeh/wg-gen-web/cmd/wg-gen-web
+RUN go build -o wg-gen-web -ldflags="-X 'github.com/jasoryeh/wg-gen-web/version.Version=${COMMIT}'" github.com/jasoryeh/wg-gen-web
 
 FROM node:10-alpine AS build-front
 WORKDIR /app
@@ -15,7 +15,7 @@ RUN npm run build
 
 FROM alpine
 WORKDIR /app
-COPY --from=build-back /app/wg-gen-web-linux .
+COPY --from=build-back /app/wg-gen-web .
 COPY --from=build-front /app/dist ./ui/dist
 COPY .env .
 RUN chmod +x ./wg-gen-web-linux

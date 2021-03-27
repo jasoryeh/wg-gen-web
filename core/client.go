@@ -10,9 +10,9 @@ import (
 	"time"
 
 	"github.com/jasoryeh/wg-gen-web/model"
-	"github.com/jasoryeh/wg-gen-web/storage"
-	"github.com/jasoryeh/wg-gen-web/template"
 	"github.com/jasoryeh/wg-gen-web/util"
+	"github.com/jasoryeh/wg-gen-web/util/file"
+	"github.com/jasoryeh/wg-gen-web/util/template"
 	uuid "github.com/satori/go.uuid"
 	log "github.com/sirupsen/logrus"
 	"github.com/skip2/go-qrcode"
@@ -71,12 +71,12 @@ func CreateClient(client *model.Client) (*model.Client, error) {
 	client.Created = time.Now().UTC()
 	client.Updated = client.Created
 
-	err = storage.Serialize(client.Id, client)
+	err = file.Serialize(client.Id, client)
 	if err != nil {
 		return nil, err
 	}
 
-	v, err := storage.Deserialize(client.Id)
+	v, err := file.Deserialize(client.Id)
 	if err != nil {
 		return nil, err
 	}
@@ -88,7 +88,7 @@ func CreateClient(client *model.Client) (*model.Client, error) {
 
 // ReadClient client by id
 func ReadClient(id string) (*model.Client, error) {
-	v, err := storage.Deserialize(id)
+	v, err := file.Deserialize(id)
 	if err != nil {
 		return nil, err
 	}
@@ -99,7 +99,7 @@ func ReadClient(id string) (*model.Client, error) {
 
 // UpdateClient preserve keys
 func UpdateClient(Id string, client *model.Client) (*model.Client, error) {
-	v, err := storage.Deserialize(Id)
+	v, err := file.Deserialize(Id)
 	if err != nil {
 		return nil, err
 	}
@@ -125,12 +125,12 @@ func UpdateClient(Id string, client *model.Client) (*model.Client, error) {
 	client.PublicKey = current.PublicKey
 	client.Updated = time.Now().UTC()
 
-	err = storage.Serialize(client.Id, client)
+	err = file.Serialize(client.Id, client)
 	if err != nil {
 		return nil, err
 	}
 
-	v, err = storage.Deserialize(Id)
+	v, err = file.Deserialize(Id)
 	if err != nil {
 		return nil, err
 	}
@@ -165,7 +165,7 @@ func ReadClients() ([]*model.Client, error) {
 		// clients file name is an uuid
 		_, err := uuid.FromString(f.Name())
 		if err == nil {
-			c, err := storage.Deserialize(f.Name())
+			c, err := file.Deserialize(f.Name())
 			if err != nil {
 				log.WithFields(log.Fields{
 					"err":  err,

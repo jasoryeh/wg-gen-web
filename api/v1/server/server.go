@@ -7,7 +7,7 @@ import (
 	"github.com/jasoryeh/wg-gen-web/auth"
 	"github.com/jasoryeh/wg-gen-web/core"
 	"github.com/jasoryeh/wg-gen-web/model"
-	"github.com/jasoryeh/wg-gen-web/version"
+	"github.com/jasoryeh/wg-gen-web/util/version"
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/oauth2"
 )

@@ -16,7 +16,7 @@ import (
 	"github.com/jasoryeh/wg-gen-web/auth"
 	"github.com/jasoryeh/wg-gen-web/core"
 	"github.com/jasoryeh/wg-gen-web/util"
-	"github.com/jasoryeh/wg-gen-web/version"
+	"github.com/jasoryeh/wg-gen-web/util/version"
 	"github.com/joho/godotenv"
 	"github.com/patrickmn/go-cache"
 	log "github.com/sirupsen/logrus"
