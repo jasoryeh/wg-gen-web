@@ -18,8 +18,8 @@ WORKDIR /app
 COPY --from=build-back /app/wg-gen-web .
 COPY --from=build-front /app/dist ./ui/dist
 COPY .env .
-RUN chmod +x ./wg-gen-web-linux
+RUN chmod +x ./wg-gen-web
 RUN apk add --no-cache ca-certificates
 EXPOSE 8080
 
-CMD ["/app/wg-gen-web-linux"]
+CMD ["/app/wg-gen-web"]
