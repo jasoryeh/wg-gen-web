@@ -41,7 +41,7 @@ func main() {
 	if err != nil {
 		log.WithFields(log.Fields{
 			"err": err,
-		}).Fatal("failed to load .env file")
+		}).Error("failed to load .env file, if you are setting in the environment, create a dummy .env file")
 	}
 
 	// check directories or create it
